@@ -29,6 +29,7 @@ npx --yes --package=node@24.18.0 --package=pnpm@10.11.0 -- node -e 'require("nod
 ## 本轮验证与导入规则
 
 Cloudflare Worker 已绑定 `blog.litianzeng.cn`，正式域名等待 Git 构建完成后更新。
+Cloudflare GitHub App 已重新连接仓库；后续合并到 `main` 会触发生产构建。
 
 - 2026-09-30 完整构建通过，共 58 个页面。
 - 首页、文章页和 BE6500 搜索结果可访问；8 个代码块保留。
