@@ -1,3 +1,8 @@
+const bannerImages = {
+  desktop: '/assets/images/home-banner-desktop-5ada882f.webp',
+  mobile: '/assets/images/home-banner-mobile-5ef2e754.webp'
+};
+
 export default {
   // 网站标题
   Title: 'LTZ博客',
@@ -31,7 +36,9 @@ export default {
     // 其他页面高度
     PageHeight: '28.88rem',
     // 背景
-    background: "url('/assets/images/home-banner.webp') no-repeat center 60%/cover",
+    background: `url('${bannerImages.desktop}') no-repeat center 60%/cover`,
+    // 移动端单独裁剪压缩；同一份路径用于背景和预加载。
+    images: bannerImages,
   },
   // 博客主题配置
   Theme: {

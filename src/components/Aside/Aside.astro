@@ -29,7 +29,7 @@ import "./Aside.less";
 	{
 		AsideShow.WebSitesShow && (
 			<section class="vh-aside-item user">
-				<img class="vh-aside-avatar" src="/assets/images/lazy-loading.webp" data-vh-lz-src={Avatar} alt={Author} />
+				<img class="vh-aside-avatar" src={Avatar} width="100" height="100" loading="lazy" decoding="async" alt={Author} />
 				<span class="vh-aside-auther">{Author}</span>
 				<p class="vh-aside-motto">{Motto}</p>
 				<section class="vh-aside-links">
@@ -80,7 +80,7 @@ import "./Aside.less";
 	{
 		AsideShow.CategoriesShow && (
 			<section class="vh-aside-item cat">
-				<h3>分类</h3>
+				<h2>分类</h2>
 				<div class="vh-aside-cat">
 					{categories
 						.sort((a: any, b: any) => b.count - a.count)
@@ -99,7 +99,7 @@ import "./Aside.less";
 	{
 		AsideShow.TagsShow && (
 			<section class="vh-aside-item tags">
-				<h3>热门标签</h3>
+				<h2>热门标签</h2>
 				<div class="vh-aside-tags">
 					{tags.map(i => (
 						<a href={`/tag/${i[0]}`}>
@@ -116,9 +116,9 @@ import "./Aside.less";
 	{
 		(
 			<section class="vh-aside-item adcard">
-				<h3>精品流量卡</h3>
+				<h2>精品流量卡</h2>
 				<a class="vh-aside-adcard" href="https://h5.lot-ml.com/ProductEn/Index/548465d7349b6599" target="_blank" rel="noopener noreferrer">
-					<img src="/assets/images/phone-card.webp" alt="精品大流量卡" />
+					<img src="/assets/images/phone-card.webp" width="725" height="725" loading="lazy" decoding="async" alt="精品大流量卡" />
 				</a>
 			</section>
 		)
@@ -129,7 +129,7 @@ import "./Aside.less";
 		{
 			recommendArticles.length && AsideShow.recommendArticleShow && (
 				<section class="vh-aside-item articles">
-					<h3>推荐文章</h3>
+					<h2>推荐文章</h2>
 					<div class="vh-aside-articles">
 						{recommendArticles.map((i, idx) => (
 							<a href={`/article/${i.id}`}>
@@ -149,7 +149,7 @@ import "./Aside.less";
 		{
 			GoogleAds.ad_Client && GoogleAds.asideAD_Slot && (
 				<section class="vh-aside-item ad">
-					<h3>广而告之</h3>
+					<h2>广而告之</h2>
 					<GoogleAd className="vh-aside-ad" slotID={GoogleAds.asideAD_Slot} />
 				</section>
 			)

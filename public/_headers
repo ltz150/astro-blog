@@ -1,0 +1,8 @@
+/vh_static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/home-banner-desktop-5ada882f.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/images/home-banner-mobile-5ef2e754.webp
+  Cache-Control: public, max-age=31536000, immutable

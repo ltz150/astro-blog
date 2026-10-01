@@ -7,7 +7,9 @@
  * 
  */
 import SITE_INFO from "@/config";
-import { LoadScript } from "@/utils/index";
+import { LoadScript, LoadStyle } from "@/utils/index";
+import walineStyles from '@waline/client/waline.css?url';
+import walineMetaStyles from '@waline/client/waline-meta.css?url';
 declare const twikoo: any;
 
 // Twikoo 评论
@@ -19,8 +21,7 @@ const TwikooFn = async (commentDOM: string) => {
 
 // Waline 评论
 const WalineFn = async (commentDOM: string, walineInit: any) => {
-  import('@waline/client/waline.css');
-  import('@waline/client/waline-meta.css');
+  await Promise.all([LoadStyle(walineStyles), LoadStyle(walineMetaStyles)]);
   const { init } = await import('@waline/client');
   walineInit = init({
     el: commentDOM, path: window.location.pathname.replace(/\/$/, ''), serverURL: SITE_INFO.Comment.Waline.serverURL,

@@ -14,7 +14,7 @@ import livePhotoInit from '@/scripts/LivePhoto'
 // 初始化BackTop组件
 import BackTopInitFn from "@/scripts/BackTop";
 // 搜索
-import { searchFn, vhSearchInit } from "@/scripts/Search";
+import { vhSearchInit } from "@/scripts/Search";
 // 图片懒加载
 import vhLzImgInit from "@/scripts/vhLazyImg";
 // 图片灯箱
@@ -83,8 +83,6 @@ const indexInit = async (only: boolean = true) => {
   only && TypeWriteInit();
   // 泡泡🫧效果
   PaoPaoInit();
-  // 预加载搜索数据
-  only && searchFn("");
   // 初始化搜索功能
   vhSearchInit();
   // 移动端侧边栏初始化
