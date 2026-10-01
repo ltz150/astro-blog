@@ -1,3 +1,4 @@
+import SITE_CONFIG from "@/config";
 import { LoadScript } from "@/utils/index";
 // 初始化视频播放器
 declare const DPlayer: any;
@@ -12,7 +13,7 @@ export default async (videoList: any[]) => {
   videoDOM.forEach((i: any) => {
     const dp = new DPlayer({
       container: i,
-      logo: "/assets/images/logo.png",
+      logo: SITE_CONFIG.Avatar,
       volume: 0.7,
       mutex: true,
       video: {

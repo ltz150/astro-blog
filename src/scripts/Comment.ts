@@ -35,13 +35,7 @@ const WalineFn = async (commentDOM: string, walineInit: any) => {
       "https://registry.npmmirror.com/@waline/emojis/1.3.0/files/tieba/tieba_sleep.png",
     ],
     requiredMeta: ['nick', 'mail'],
-    imageUploader: async (file: any) => {
-      const body = new FormData();
-      body.append('file', file);
-      const res = await fetch("https://wp-cdn.4ce.cn/upload", { method: "POST", body });
-      const resJson = await res.json();
-      return resJson.data.link.replace('i.imgur.com', 'wp-cdn.4ce.cn/v2');
-    }
+
   });
 }
 

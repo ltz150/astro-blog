@@ -1,19 +1,19 @@
+import SITE_CONFIG from "@/config";
+
 export default {
-  // API 接口请求优先，数据格式保持和 data 一致
   api: '',
-  // api 为空则使用 data 静态数据
   data: [
     {
-      "name": "韩小韩博客",
-      "link": "https://www.vvhan.com",
-      "avatar": "https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640",
-      "descr": "运气是计划之外的东西."
+      name: 'GitHub · ltz150',
+      link: 'https://github.com/ltz150',
+      avatar: SITE_CONFIG.Avatar,
+      descr: '我的 GitHub 主页。'
     },
     {
-      "name": "韩小韩API",
-      "link": "https://api.vvhan.com",
-      "avatar": "https://api.vvhan.com/static/images/logo.webp",
-      "descr": "免费Web API数据接口调用服务平台."
+      name: 'LTZ博客源码',
+      link: 'https://github.com/ltz150/astro-blog',
+      avatar: SITE_CONFIG.Avatar,
+      descr: '文章、图片、主题配置与部署记录。'
     }
   ]
-}
+};

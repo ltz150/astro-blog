@@ -6,7 +6,7 @@ import musicStyles from 'aplayer/dist/APlayer.min.css?url';
 // 初始化音乐播放器
 export default async (MusicList: any[]) => {
   const musicDOM: any = document.querySelectorAll(".vh-node.vh-vhMusic");
-  if (!musicDOM.length) return;
+  if (!musicDOM.length || !vhMusicApi) return;
   // 只有含音乐的文章才下载播放器及样式。
   const [{ default: APlayer }] = await Promise.all([
     import('aplayer'),
