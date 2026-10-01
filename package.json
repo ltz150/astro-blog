@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "test:article-card": "node tests/article-card-image-link.mjs",
     "astro": "astro",
     "newpost": "node ./script/newpost.js",
     "offdev": "astro preferences disable devToolbar",
