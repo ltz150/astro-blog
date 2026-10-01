@@ -28,8 +28,11 @@ npx --yes --package=node@24.18.0 --package=pnpm@10.11.0 -- node -e 'require("nod
 
 ## 本轮验证与导入规则
 
-Cloudflare Worker 已绑定 `blog.litianzeng.cn`，正式域名等待 Git 构建完成后更新。
-Cloudflare GitHub App 已重新连接仓库；后续合并到 `main` 会触发生产构建。
+2026-10-01 已改用 Cloudflare Pages Git 集成，项目名 `astro-blog`，临时地址 `https://astro-blog-4vw.pages.dev`。
+旧 Worker 的 `blog.litianzeng.cn` 绑定已解除，正式域名已关联 Pages；首页和测试文章实测返回 HTTP 200 与正确 HTML 标题。
+构建命令 `pnpm run build`，输出目录 `dist`，生产分支 `main`，仓库根目录。首次 Pages 构建使用 Node 24.18.0、pnpm 10.11.0 并成功生成 58 页。
+Worker Builds 和测试 Deploy Hook 曾未能触发构建（Hook 返回 HTTP 500），具体内部原因未确定。后续发布使用 Pages。
+新手手动部署教程位于 `src/content/blog/published/obsidian-astro-cloudflare-pages/index.md`。
 
 - 2026-09-30 完整构建通过，共 58 个页面。
 - 首页、文章页和 BE6500 搜索结果可访问；8 个代码块保留。
@@ -41,4 +44,4 @@ Cloudflare GitHub App 已重新连接仓库；后续合并到 `main` 会触发�
 
 本地测试使用分支 `codex/obsidian-test-article`。GitHub 发布结果以远端 `main` 分支为准。`Site` 配置只是站点网址配置；将代码推送到 GitHub 后，还需要 Cloudflare 构建部署才能更新正式域名。
 
-正式发布前还需接通生产分支、Cloudflare 构建与域名对应的部署项目，并处理主题示例文章、默认推广区和阅读时长统计。文章中的路由器指令在本轮均未执行，其历史操作结果也未重新验证。
+后续还需验证真实本地图片发布、清理主题示例文章和默认推广区，并检查阅读时长统计。文章中的路由器指令在本轮均未执行，其历史操作结果也未重新验证。
