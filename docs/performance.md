@@ -23,7 +23,7 @@
 
 在 Cloudflare 的 **Workers & Pages → astro-blog（Pages）→ 指标 → Web Analytics** 中启用。控制台已确认启用，下一次部署才开始向页面插入脚本。
 
-网站不额外手写统计脚本，避免与 Pages 自动注入重复。`src/config.ts` 中的 Han Analytics 保持关闭。
+Cloudflare Web Analytics 脚本只由 Pages 自动注入，避免重复安装 Cloudflare beacon。2026-10-02 按用户确认的方案另接入自建 HanAnalytics：`src/config.ts` 中的 `HanAnalytics` 配置自己的统计域名，页脚加载其轻量 tracker。两个统计服务分别记录数据，统计口径可能不同。
 
 查看数据：进入同一页面，点击 **查看 Web Analytics**。上线后需要真实浏览器访问并等待数据汇总；启用不会补录此前的历史访问。
 

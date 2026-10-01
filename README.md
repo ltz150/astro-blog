@@ -30,6 +30,8 @@ pnpm build
 
 没有配置自己的评论服务、音乐接口或收款码时，保持对应功能关闭。Cloudflare Web Analytics 由 Pages 注入统计脚本。
 
+自建 HanAnalytics 面板为 <https://analytics.litianzeng.cn>，页脚显示“访问统计”。配置在 `src/config.ts` 的 `HanAnalytics`，关闭 `enable` 可停止博客跟踪和隐藏入口。统计服务独立部署在 [ltz150/han-analytics](https://github.com/ltz150/han-analytics)，[部署与维护说明](https://github.com/ltz150/han-analytics/blob/main/docs/deployment.md)；读取令牌仅保存在统计 Pages 项目的加密密钥中。原有 Cloudflare Web Analytics 保留。
+
 ## 主题来源与许可
 
 基于 [vhAstro-Theme](https://github.com/uxiaohan/vhAstro-Theme) 和 Astro 构建。原主题 MIT 许可证及版权声明保留在 `LICENSE`，并随网站发布为 `/licenses/vhastro-mit.txt`。
