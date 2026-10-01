@@ -1,0 +1,40 @@
+.home-feature {
+  width: 100%; max-width: var(--vh-main-max-width); padding: 90px 0.66rem 0; margin: 0 auto;
+  box-sizing: border-box;
+  .home-feature-hero {position: relative; overflow: hidden; border-radius: 22px; background: #173b49; min-height: 350px; aspect-ratio: 3/1;}
+  picture, picture img {position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;}
+  .home-feature-copy {position: relative; z-index: 1; margin: 28px; padding: 26px; color: #fff; width: 46%; box-sizing: border-box; border-radius: 20px; border: 1px solid #ffffff35; background: #163d4d66; backdrop-filter: blur(18px) saturate(130%); -webkit-backdrop-filter: blur(18px) saturate(130%); box-shadow: 0 10px 40px #05253120;}
+  .home-feature-eyebrow {font-size: 0.78rem; letter-spacing: .12em; color: #c4efeb;}
+  h1 {font-size: clamp(28px,3vw,44px); line-height: 1.35; letter-spacing: -.04em; margin: 18px 0 12px; font-weight: 650;}
+  h1 span {color: #b7eee4;}
+  p {font-size: .94rem; line-height: 1.8; color: #d7e5e9;}
+  .home-feature-copy > a {display: inline-flex; align-items: center; gap: 24px; margin-top: 22px; padding: 10px 19px; border-radius: 999px; font-size: .86rem; background: #edf9f6; color: #193f49;}
+  .home-topics {display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; margin-top: 18px;}
+  .home-topic {position: relative; overflow: hidden; border-radius: 15px; aspect-ratio: 2/1; color: white; isolation: isolate; background: #234954;}
+  .home-topic img {width: 100%; height: 100%; object-fit: cover; transition: transform .25s ease;}
+  .home-topic::after {content: ''; position: absolute; inset: 0; background: linear-gradient(180deg,transparent 15%,rgba(7,22,31,.65)); z-index: 0;}
+  .home-topic > span {position: absolute; left: 12px; right: 12px; bottom: 12px; z-index: 1; font-size: 1.1rem; font-weight: 600; padding: 11px 14px; border: 1px solid #ffffff40; border-radius: 12px; background: #15333d66; backdrop-filter: blur(16px) saturate(130%); -webkit-backdrop-filter: blur(16px) saturate(130%); text-shadow: 0 1px 5px #152c3c;}
+  .home-topic small {display: block; font-size: .72rem; font-weight: 400; margin-top: 5px;}
+  .home-topic > i {position: absolute; right: 17px; bottom: 20px; z-index: 1; font-style: normal; font-size: 1.2rem;}
+  .home-topic:hover img {transform: scale(1.045);}
+  a:focus-visible {outline: 3px solid var(--vh-main-color); outline-offset: 3px;}
+}
+@media(max-width: 888px) {
+  .home-feature .home-feature-hero {min-height: 330px;}
+  .home-feature .home-topics {gap: 12px; grid-template-columns: repeat(2,minmax(0,1fr));}
+  .home-feature .home-feature-copy {width: 65%; padding: 22px; margin: 20px;}
+}
+@media(max-width: 600px) {
+  .home-feature {padding-top: 80px;}
+  .home-feature .home-feature-hero {min-height: 480px; aspect-ratio: auto;}
+  .home-feature .home-feature-copy {padding: 20px; margin: 16px; width: calc(100% - 32px);}
+  .home-feature .home-feature-eyebrow {font-size: .7rem;}
+  .home-feature h1 {font-size: 30px; margin-top: 15px;}
+  .home-feature p {font-size: .82rem;}
+  .home-feature .home-feature-copy > a {margin-top: 14px; padding: 8px 16px;}
+  .home-feature .home-topic {aspect-ratio: 1.7/1;}
+  .home-feature .home-topic > span {left: 13px; bottom: 13px; font-size: .98rem;}
+  .home-feature .home-topic small {font-size: .65rem;}
+  .home-feature .home-topic > i {right: 11px; bottom: 14px;}
+}
+@media(prefers-reduced-motion:reduce) {.home-feature .home-topic img {transition: none;}}

@@ -1,0 +1,26 @@
+---
+import SITE from '@/config';
+import './HomeFeature.less';
+const { HomeFeature, Title, Author, Motto } = SITE;
+---
+<section class="home-feature" aria-label="博客介绍与栏目导航">
+  <div class="home-feature-hero">
+    <picture>
+      <source media="(max-width: 600px)" srcset={HomeFeature.images.mobile} />
+      <img src={HomeFeature.images.desktop} width="1800" height="600" alt="电脑、笔记本和网络设备组成的 LTZ 技术写作空间" fetchpriority="high" decoding="async" />
+    </picture>
+    <div class="home-feature-copy">
+      <span class="home-feature-eyebrow">{Author} / 个人空间</span>
+      <h1>你好，欢迎来到<br /><span>{Title}。</span></h1>
+      <p>{Motto}<br />在这里分享技术实践，也留下生活的片段。</p>
+      <a href="/archives">开始阅读 <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <nav class="home-topics" aria-label="首页栏目">
+    {HomeFeature.topics.map(topic => <a class="home-topic" href={topic.href}>
+      <img src={topic.image} width="640" height="320" alt="" loading="lazy" decoding="async" />
+      <span>{topic.title}<small>{topic.description}</small></span>
+      <i aria-hidden="true">↗</i>
+    </a>)}
+  </nav>
+</section>

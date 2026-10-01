@@ -22,6 +22,8 @@ const recommendArticles = getRecommendArticles();
 import GoogleAd from "@/components/GoogleAd/GoogleAd.astro";
 // 侧边栏样式
 import "./Aside.less";
+import ArticleToc from '@/components/ArticleToc/ArticleToc.astro';
+const { headings = [] } = Astro.props;
 ---
 
 <aside class="vh-aside">
@@ -133,6 +135,7 @@ import "./Aside.less";
 			)
 		}
 
+		<ArticleToc headings={headings} />
 		<!-- 谷歌广告块 -->
 		{
 			GoogleAds.ad_Client && GoogleAds.asideAD_Slot && (

@@ -1,6 +1,6 @@
 const bannerImages = {
-  desktop: '/assets/images/home-banner-desktop-5ada882f.webp',
-  mobile: '/assets/images/home-banner-mobile-5ef2e754.webp'
+  desktop: '/assets/images/home/ltz-hero.webp',
+  mobile: '/assets/images/home/ltz-hero-mobile.webp'
 };
 
 export default {
@@ -39,6 +39,15 @@ export default {
     background: `url('${bannerImages.desktop}') no-repeat center 60%/cover`,
     // 移动端单独裁剪压缩；同一份路径用于背景和预加载。
     images: bannerImages,
+  },
+  HomeFeature: {
+    images: bannerImages,
+    topics: [
+      { title: '博客搭建', description: '从写作到发布', href: '/categories/博客搭建', image: '/assets/images/home/blog.webp' },
+      { title: '路由器', description: '网络与设备实践', href: '/categories/路由器', image: '/assets/images/home/router.webp' },
+      { title: '动态随笔', description: '生活与学习片段', href: '/talking', image: '/assets/images/home/journal.webp' },
+      { title: '我的链接', description: '收藏好用的资源', href: '/links', image: '/assets/images/home/links.webp' },
+    ],
   },
   // 博客主题配置
   Theme: {

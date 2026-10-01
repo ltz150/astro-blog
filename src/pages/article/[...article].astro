@@ -19,7 +19,7 @@ import SITE_CONFIG from "@/config";
 const { Site, Title, Author, GoogleAds } = SITE_CONFIG;
 // 处理文章内容
 const description = getDescription(post);
-const { Content, remarkPluginFrontmatter } = await render(post);
+const { Content, headings, remarkPluginFrontmatter } = await render(post);
 // 文章字数和阅读时间
 const { reading_time, article_word_count } = remarkPluginFrontmatter;
 // 公共 Layout
@@ -39,9 +39,10 @@ import GoogleAd from "@/components/GoogleAd/GoogleAd.astro";
 import "@/styles/Article.less";
 // 文章内容基础样式
 import "@/styles/ArticleBase.less";
+import ArticleToc from '@/components/ArticleToc/ArticleToc.astro';
 ---
 
-<Layout title={post.data.title} keywords={post.data.tags} description={description} pagecover={ARTICLE_COVER}>
+<Layout title={post.data.title} keywords={post.data.tags} description={description} pagecover={ARTICLE_COVER} headings={headings}>
 	<article class="vh-article-main vh-animation vh-animation-init">
 		<header>
 			<h1>{post.data.title}</h1>
@@ -58,6 +59,7 @@ import "@/styles/ArticleBase.less";
 				</a>
 			</div>
 		</header>
+		<ArticleToc headings={headings} mobile />
 		<main>
 			<Content />
 			<section class="tag-list">

@@ -1,0 +1,27 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-02",
+  "assets": [
+    {
+      "name": "hero",
+      "prompt": "Use case: stylized-concept. Create an original polished 3D clay/ceramic illustration for the LTZ personal technology and writing blog. Soft studio lighting, rounded but precise objects, matte surfaces, subtle frosted glass, pleasing shadows, uncluttered composition. No text, lettering, logos, watermark, frames or UI screenshots. Landscape image. Very wide 3:1 composition. Deep blue-teal studio background gradually becoming pale mint at right. Leave the LEFT 43 percent dark and empty for white HTML title copy. On the RIGHT half arrange a charming 3D desktop workspace: laptop with simple abstract code lines, an open paper notebook, a small white router, a frosted glass cloud and three floating round technology tokens with simple geometric symbols. A refined technology still life, no humans, no text. Objects cluster around right middle, generous safe edges."
+    },
+    {
+      "name": "blog",
+      "prompt": "Use case: stylized-concept. Create an original polished 3D clay/ceramic illustration for the LTZ personal technology and writing blog. Soft studio lighting, rounded but precise objects, matte surfaces, subtle frosted glass, pleasing shadows, uncluttered composition. No text, lettering, logos, watermark, frames or UI screenshots. Landscape image. 2:1 landscape. Center a softly glowing frosted glass browser window floating above a paper notebook, a small cloud and a branching version-control symbol. Midnight blue and cool cyan palette, quiet luminous accents, airy premium 3D editorial illustration. Symbolizes building a personal blog."
+    },
+    {
+      "name": "router",
+      "prompt": "Use case: stylized-concept. Create an original polished 3D clay/ceramic illustration for the LTZ personal technology and writing blog. Soft studio lighting, rounded but precise objects, matte surfaces, subtle frosted glass, pleasing shadows, uncluttered composition. No text, lettering, logos, watermark, frames or UI screenshots. Landscape image. 2:1 landscape. Center a ceramic white WiFi router with four short antennas, a tiny network globe and flowing teal connection arcs. Muted turquoise studio background, rounded tactile matte materials. Clean premium 3D editorial illustration of home networking."
+    },
+    {
+      "name": "journal",
+      "prompt": "Use case: stylized-concept. Create an original polished 3D clay/ceramic illustration for the LTZ personal technology and writing blog. Soft studio lighting, rounded but precise objects, matte surfaces, subtle frosted glass, pleasing shadows, uncluttered composition. No text, lettering, logos, watermark, frames or UI screenshots. Landscape image. 2:1 landscape. An open creamy paper notebook, a simple pen and a small ceramic coffee cup on warm sand tabletop, soft morning light, gentle shadow. Warm beige and caramel palette. Centered quiet 3D clay editorial scene for personal journal writing."
+    },
+    {
+      "name": "links",
+      "prompt": "Use case: stylized-concept. Create an original polished 3D clay/ceramic illustration for the LTZ personal technology and writing blog. Soft studio lighting, rounded but precise objects, matte surfaces, subtle frosted glass, pleasing shadows, uncluttered composition. No text, lettering, logos, watermark, frames or UI screenshots. Landscape image. 2:1 landscape. Two interlocking ceramic chain links, three small frosted glass bookmark tiles and a subtle compass symbol. Desaturated lavender and periwinkle background with off-white objects. Centered refined 3D editorial scene for a curated collection of useful links."
+    }
+  ],
+  "mobileHero": "Recompose this LTZ technology workspace illustration for a mobile blog hero in a portrait 4:5 composition. Preserve the same blue-teal to pale mint palette, silver Apple-inspired laptop without logo, white rounded router, notebook, floating frosted glass cloud and token symbols. Give the objects refined 3D product-render materials and soft premium Apple-like studio lighting. Place ALL devices in the bottom 42 percent, with the laptop and frosted cloud most visible; keep the top 58 percent a quiet dark blue-teal empty background for white HTML copy. No text, letters, logos, watermarks or frame. Do not crop off the laptop or router. This is a separate responsive artwork, maintain its identity and mood."
+}

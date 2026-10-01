@@ -1,5 +1,5 @@
 ---
-const { title, keywords, description, pagecover, activeNav, Home } = Astro.props;
+const { title, keywords, description, pagecover, activeNav, Home, headings = [] } = Astro.props;
 // 网站配置
 import SITE_INFO from "@/config";
 const { GoogleAds, Theme, HomeBanner } = SITE_INFO;
@@ -9,7 +9,7 @@ import Head from "@/components/Head/Head.astro";
 // 顶部 Header
 import Header from "@/components/Header/Header.astro";
 // Main 区域 Header
-import MainHeader from "@/components/MainHeader/MainHeader.astro";
+import HomeFeature from "@/components/HomeFeature/HomeFeature.astro";
 // Aside组件
 import Aside from "@/components/Aside/Aside.astro";
 // 底部 Footer
@@ -29,8 +29,8 @@ import "./Layout.less";
 <html lang="zh-CN">
 	<Head Title={title} Keywords={keywords} Description={description} PageCover={pagecover}>
 		<!-- 首屏背景提前发现，按屏幕宽度只下载对应版本。 -->
-		{HomeBanner.enable && <link rel="preload" as="image" href={HomeBanner.images.mobile} media="(max-width: 768px)" fetchpriority="high" />}
-		{HomeBanner.enable && <link rel="preload" as="image" href={HomeBanner.images.desktop} media="(min-width: 769px)" fetchpriority="high" />}
+		{Home && <link rel="preload" as="image" href={HomeBanner.images.mobile} media="(max-width: 600px)" fetchpriority="high" />}
+		{Home && <link rel="preload" as="image" href={HomeBanner.images.desktop} media="(min-width: 601px)" fetchpriority="high" />}
 		<!-- 谷歌广告JS加载项 -->
 		{ad_Client && (asideAD_Slot || articleAD_Slot) && <script is:inline async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ad_Client}`} crossorigin="anonymous" />}
 		<!-- 彩旗🎈 -->
@@ -45,13 +45,13 @@ import "./Layout.less";
 	<body>
 		<MobileSidebar />
 		<Header activeNav={activeNav} />
-		<main class="main">
-			{HomeBanner.enable && <MainHeader />}
-			<section class="main-inner" style={`padding-top:${HomeBanner.enable ? "0.88rem" : "calc(66px + 0.68rem)"}`}>
+		<main class="main" data-home={Home ? 'true' : undefined}>
+			{Home && <HomeFeature />}
+			<section class="main-inner" style={`padding-top:${Home ? "0.5rem" : "calc(66px + 0.68rem)"}`}>
 				<section class="main-inner-content">
 					<slot />
 				</section>
-				<Aside />
+				<Aside headings={headings} />
 			</section>
 			<BackTop />
 		</main>

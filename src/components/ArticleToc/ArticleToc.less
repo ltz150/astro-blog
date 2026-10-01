@@ -1,0 +1,15 @@
+aside.vh-aside .article-toc {align-items: stretch; padding: 1.1rem;}
+aside.vh-aside .article-toc > h2 {font-size: .98rem; font-weight: 600; color: var(--vh-font-color);}
+.article-toc h2 > span {color: var(--vh-main-color); margin-right: 6px;}
+.toc-nav {max-height: min(55vh,650px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; width: 100%;}
+.toc-nav ol {list-style: none; margin: 0; padding: 0;}
+.toc-nav li {padding-left: calc(var(--toc-indent) * 13px);}
+.toc-nav a {display: block; padding: 7px 9px; margin: 2px 0; border-left: 2px solid transparent; border-radius: 0 5px 5px 0; font-size: .78rem; line-height: 1.6; color: var(--vh-font-66); overflow-wrap: anywhere; transition: color .15s,background .15s;}
+.toc-nav a:hover, .toc-nav a[aria-current="location"] {color: #007e77; background: #e9f7f4; border-left-color: var(--vh-main-color);}
+.toc-nav a:focus-visible {outline: 2px solid var(--vh-main-color); outline-offset: -2px;}
+.mobile-toc {display: none; margin: 20px 0; border: 1px solid #dce9e7; border-radius: 12px; background: #f8fcfb;}
+.mobile-toc summary {padding: 12px 16px; cursor: pointer; font-size: .92rem; font-weight: 600;}
+.mobile-toc summary span {float: right;}
+.mobile-toc .toc-nav {padding: 0 10px 10px; box-sizing: border-box;}
+.vh-article-main :is(h1,h2,h3)[id] {scroll-margin-top: 96px;}
+@media(max-width:888px) {aside.vh-aside .article-toc {display: none;} .mobile-toc {display: block;}}

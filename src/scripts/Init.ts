@@ -37,6 +37,7 @@ import GoogleAdInit from "@/scripts/GoogleAd";
 import SeoPushInit from "@/scripts/SeoPush";
 // SmoothScroll 滚动优化
 import SmoothScroll from "@/scripts/Smoothscroll";
+import initArticleToc from '@/scripts/ArticleToc';
 
 // ============================================================
 
@@ -48,7 +49,8 @@ const indexInit = async (only: boolean = true) => {
   // 初始化网站运行时间
   only && initWebSiteTime();
   // 初始化BackTop组件
-  only && BackTopInitFn();
+  BackTopInitFn();
+  initArticleToc();
   // SmoothScroll 滚动优化
   only && SmoothScroll();
   // 图片灯箱

@@ -33,7 +33,7 @@ const currentPage = page_data.url.current.replace("/", "");
 
 <Layout title={currentPage ? `第${currentPage}页文章` : ""} description={Description} Home={true}>
 	<section class="article-list-main">
-		<h1 class="sr-only">{SITE_CONFIG.Title}文章列表</h1>
+		<h2 class="sr-only">{SITE_CONFIG.Title}文章列表</h2>
 		<section class="article-list">
 			<!-- 文章列表 -->
 			{data.map((post, index) => <ArticleCard post={post} index={index} />)}

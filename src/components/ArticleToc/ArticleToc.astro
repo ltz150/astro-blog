@@ -1,0 +1,14 @@
+---
+import type { MarkdownHeading } from 'astro';
+import './ArticleToc.less';
+const { headings = [], mobile = false } = Astro.props as {headings?: MarkdownHeading[], mobile?: boolean};
+const entries = headings.filter(h => h.depth <= 3);
+const baseDepth = Math.min(...entries.map(h => h.depth));
+---
+{entries.length > 0 && (mobile ? <details class="mobile-toc">
+  <summary>文章目录 <span aria-hidden="true">⌄</span></summary>
+  <nav class="toc-nav" aria-label="文章章节导航"><ol>{entries.map(h => <li style={`--toc-indent:${h.depth-baseDepth}`}><a href={`#${encodeURIComponent(h.slug)}`} data-heading={h.slug} data-no-swup>{h.text}</a></li>)}</ol></nav>
+</details> : <section class="vh-aside-item article-toc">
+  <h2><span aria-hidden="true">☰</span> 文章目录</h2>
+  <nav class="toc-nav" aria-label="文章章节导航"><ol>{entries.map(h => <li style={`--toc-indent:${h.depth-baseDepth}`}><a href={`#${encodeURIComponent(h.slug)}`} data-heading={h.slug} data-no-swup>{h.text}</a></li>)}</ol></nav>
+</section>)}
