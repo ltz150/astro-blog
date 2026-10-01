@@ -40,7 +40,7 @@ Obsidian 写文章
 | Cloudflare Pages | 从 GitHub 拉代码、构建、托管网页 |
 | DNS / 自定义域 | 让自己的域名访问正确的托管项目 |
 
-**把文件上传到 GitHub，只完成了源代码保存。**网站更新还要经过构建、部署和域名指向这三步。
+**把文件上传到 GitHub，只完成了源代码保存。** 网站更新还要经过构建、部署和域名指向这三步。
 
 本文使用静态输出：构建命令是 `pnpm run build`，输出目录是 `dist`。Cloudflare 的 [Astro 部署指南](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/)说明了 Pages 的构建配置与 Git 自动部署方式。
 
@@ -69,7 +69,7 @@ Obsidian 写文章
 
 如果已经有自己的博客仓库，直接使用它，避免重复创建。发布内容时遵守主题仓库的许可证。
 
-**容易踩的坑：**本次检出的主题 README 中，一个标为“Cloudflare Pages 自动部署”的按钮，实际链接包含 `deploy-to-workers`。这会进入 Worker 创建流程。本文从 Cloudflare 控制台手动选择 **Pages → 导入 Git 仓库**，避免入口混淆。这个观察仅对应本次检出的主题版本。
+**容易踩的坑：** 本次检出的主题 README 中，一个标为“Cloudflare Pages 自动部署”的按钮，实际链接包含 `deploy-to-workers`。这会进入 Worker 创建流程。本文从 Cloudflare 控制台手动选择 **Pages → 导入 Git 仓库**，避免入口混淆。这个观察仅对应本次检出的主题版本。
 
 ### 2. 用 GitHub Desktop 下载到 Mac
 
@@ -194,7 +194,7 @@ npx --yes pnpm@10.11.0 preview
 5. 点击 **Push origin**，等待上传完成。
 6. 打开 GitHub 网页，检查 `main` 分支确实有刚才的文件和提交。
 
-**Commit 只记录到本机，Push 才上传到 GitHub。**首次操作可能出现 **Publish branch**，按界面提示发布分支。
+**Commit 只记录到本机，Push 才上传到 GitHub。** 首次操作可能出现 **Publish branch**，按界面提示发布分支。
 
 不要提交 `node_modules`、`dist`、`.env`、访问令牌、私密笔记和电脑上的绝对路径。主题仓库通常已有 `.gitignore`，仍需检查 Desktop 的文件列表。
 
@@ -221,7 +221,7 @@ npx --yes pnpm@10.11.0 preview
 
 点击 **保存并部署（Save and Deploy）**。观察“克隆仓库 → 安装依赖 → 构建 → 上传”的结果，最后必须出现成功状态。
 
-成功后先打开系统给出的 `*.pages.dev` 地址。**用控制台显示的实际地址，不能只根据项目名猜网址。**本次分配的是 `astro-blog-4vw.pages.dev`。
+成功后先打开系统给出的 `*.pages.dev` 地址。 **用控制台显示的实际地址，不能只根据项目名猜网址。** 本次分配的是 `astro-blog-4vw.pages.dev`。
 
 检查首页、测试文章和图片，再配置自定义域。Pages 的 Git 集成会在新的提交推送后自动重建；无需额外配置手写 GitHub Webhook。
 
@@ -261,7 +261,7 @@ npx --yes pnpm@10.11.0 preview
 - 测试 Deploy Hook 时，Cloudflare 返回 HTTP 500，GitHub 投递记录也显示 500。
 - 同一仓库经 Pages 导入后，成功克隆、构建和部署。
 
-这些证据说明：**正式域名仍在提供旧 Worker 的示例响应，博客静态产物尚未部署到该 Worker。**这不证明 Workers 不能部署 Astro；本次 Worker Builds 为何无法启动，Cloudflare 没有提供足够信息，具体内部原因仍未确定。
+这些证据说明： **正式域名仍在提供旧 Worker 的示例响应，博客静态产物尚未部署到该 Worker。** 这不证明 Workers 不能部署 Astro；本次 Worker Builds 为何无法启动，Cloudflare 没有提供足够信息，具体内部原因仍未确定。
 
 ### 按这个顺序排查
 
@@ -291,7 +291,7 @@ npx --yes pnpm@10.11.0 preview
 6. 回到 **Pages → 自定义域**，重新添加并激活该域名，让 Pages 创建正确的 CNAME。
 7. 等待域名激活，重新检查首页和文章页。
 
-**只在确认该域名属于待替换的旧 Worker、且 Pages 已正常运行时解除绑定。**解除期间域名可能短暂不可访问；这项操作不要求删除整个 Worker 或仓库。只读 DNS 应从管理它的 Worker 域名界面解除，不能强行在 DNS 页面覆盖。
+**只在确认该域名属于待替换的旧 Worker、且 Pages 已正常运行时解除绑定。** 解除期间域名可能短暂不可访问；这项操作不要求删除整个 Worker 或仓库。只读 DNS 应从管理它的 Worker 域名界面解除，不能强行在 DNS 页面覆盖。
 
 ## 十、以后每次如何发布
 
