@@ -1,6 +1,7 @@
 import vhPaopaoInit from '../../public/assets/js/vhPaopao.js';
 let headerMainHeight = 0;
 export default async () => {
+  if (window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches) return;
   // 调用
   const target = document.querySelector('main.main > .header-main');
   if (!target) return;

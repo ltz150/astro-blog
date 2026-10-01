@@ -78,6 +78,10 @@
       color: #fff;
     }
 
+    &[data-static]::after {
+      content: none;
+    }
+
     @keyframes blink {
       50% {
         opacity: 0;

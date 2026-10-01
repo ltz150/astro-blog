@@ -4,6 +4,12 @@ export default () => {
   if (!writeDom) return;
   const TypeWriteList: any = SITE_INFO.TypeWriteList;
   if (!Array.isArray(TypeWriteList) || !TypeWriteList.length) return writeDom.remove();
+  // 手机和减少动态效果模式直接显示文案，避免首屏持续重绘。
+  if (window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)').matches) {
+    writeDom.textContent = TypeWriteList[0];
+    writeDom.setAttribute('data-static', '');
+    return;
+  }
   let TypeWriteListIndex = 0;
   let index = 0;
   let isDeleting = false;
