@@ -82,6 +82,12 @@ export default {
   },
   // DNS预解析地址
   DNSOptimization: [],
+  // 自建访问统计，独立面板使用轻量跟踪脚本。
+  HanAnalytics: {
+    enable: true,
+    url: 'https://analytics.litianzeng.cn',
+    websiteId: 'LTZ-Blog',
+  },
   // 博客音乐组件解析接口（填写自己的服务地址；留空时不启用）
   vhMusicApi: '',
   // 评论组件（只允许同时开启一个）

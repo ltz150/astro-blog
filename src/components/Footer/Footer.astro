@@ -1,7 +1,7 @@
 ---
 import SITE_CONFIG from "@/config";
 import "./Footer.less";
-const { Title, Author, CreateTime } = SITE_CONFIG;
+const { Title, Author, CreateTime, HanAnalytics, Site } = SITE_CONFIG;
 const startYear = new Date(CreateTime).getFullYear();
 const currentYear = new Date().getFullYear();
 const years = startYear === currentYear ? `${startYear}` : `${startYear}–${currentYear}`;
@@ -16,8 +16,10 @@ const years = startYear === currentYear ? `${startYear}` : `${startYear}–${cur
       <a href="https://github.com/ltz150/astro-blog" target="_blank" rel="noopener noreferrer">博客源码</a>
       <a href="/rss.xml">RSS 订阅</a>
       <a href="/sitemap-index.xml">站点地图</a>
+      {HanAnalytics.enable && <a href={HanAnalytics.url} target="_blank" rel="noopener noreferrer" data-no-swup>访问统计</a>}
       <a href="/licenses/vhastro-mit.txt" target="_blank" rel="noopener noreferrer">开源许可</a>
     </p>
     <p><span><cite>运行时间</cite><em class="web_time"></em></span></p>
   </main>
 </footer>
+{HanAnalytics.enable && <script is:inline defer src={`${HanAnalytics.url}/tracker.js`} data-website-id={HanAnalytics.websiteId} data-host={new URL(Site).hostname}></script>}
