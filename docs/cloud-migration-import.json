@@ -1,0 +1,130 @@
+{
+  "publishedDate": "2026-10-02",
+  "count": 17,
+  "changes": [
+    "新增博客文章信息",
+    "将开头一级标题移至文章 title",
+    "将文档集相对链接改为博客文章路径"
+  ],
+  "articles": [
+    {
+      "sourceFile": "00-阅读索引.md",
+      "sourceSha256": "fb4bf0a0076f359ec1dd6860163006be09941a076747848e90d72c49d9432c7c",
+      "publishedFile": "src/content/blog/published/cloud-migration/00-cloud-migration-guide.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/cloud-migration-guide",
+      "title": "云迁移技术实践资料集"
+    },
+    {
+      "sourceFile": "01-迁云评估与网络准备.md",
+      "sourceSha256": "67c8ec50af9bf3e63fe40e48dd36a38059276238bd71458a13afd93ead27194b",
+      "publishedFile": "src/content/blog/published/cloud-migration/01-cloud-migration-network-planning.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/cloud-migration-network-planning",
+      "title": "迁云评估与网络准备：先解决可达性，再开始搬数据"
+    },
+    {
+      "sourceFile": "02-Docker迁移工具部署.md",
+      "sourceSha256": "a4810fe058000d23aeefbf826798be517453ca66837c1dd84d28bab3c9e7ff71",
+      "publishedFile": "src/content/blog/published/cloud-migration/02-docker-migration-tools.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/docker-migration-tools",
+      "title": "用 Docker 部署迁移工具：服务依赖和网络模式要一起设计"
+    },
+    {
+      "sourceFile": "03-DTS与DRDS批量迁移.md",
+      "sourceSha256": "b6883755016611931d6bee5ff073c2bfaebb4f0d7be0902d2a02bb47fe04601a",
+      "publishedFile": "src/content/blog/published/cloud-migration/03-dts-drds-batch-migration.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/dts-drds-batch-migration",
+      "title": "DTS 与 DRDS 批量迁移：映射、预检查和增量延迟治理"
+    },
+    {
+      "sourceFile": "04-MaxCompute与DataWorks迁移.md",
+      "sourceSha256": "1a5a6707f8a189265b0165369c7b73732962d605509a4a2325bdebdcf076b132",
+      "publishedFile": "src/content/blog/published/cloud-migration/04-maxcompute-dataworks-migration.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/maxcompute-dataworks-migration",
+      "title": "MaxCompute 与 DataWorks 迁移：数据、结构和调度必须共同校验"
+    },
+    {
+      "sourceFile": "05-OSS对象存储迁移.md",
+      "sourceSha256": "c99a697b3406b386b258f86910611c72cf884af42ccc294ff3ecd918894dc1f7",
+      "publishedFile": "src/content/blog/published/cloud-migration/05-oss-object-storage-migration.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/oss-object-storage-migration",
+      "title": "OSS 对象存储迁移：全量、重试与删除一致性"
+    },
+    {
+      "sourceFile": "06-Redis迁移与校验.md",
+      "sourceSha256": "66fa3533d98a6ad2a9317af631a4f0fd582fd44bd1146e27042fe306ba5092e4",
+      "publishedFile": "src/content/blog/published/cloud-migration/06-redis-migration-validation.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/redis-migration-validation",
+      "title": "Redis 迁移与校验：同步模式、拓扑和 Key 冲突"
+    },
+    {
+      "sourceFile": "07-MongoDB增量同步.md",
+      "sourceSha256": "67a718b37b13dcce8ac8f3526fe08af33359972a8ceed9f47328353b431cad52",
+      "publishedFile": "src/content/blog/published/cloud-migration/07-mongodb-incremental-sync.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/mongodb-incremental-sync",
+      "title": "MongoDB 增量同步：副本集、检查点与同步范围"
+    },
+    {
+      "sourceFile": "08-异构数仓与Hologres迁移.md",
+      "sourceSha256": "9dc99fd0e769093e689ed286de1ea1a75112441a14669b8bd6a29b59ebeaee6e",
+      "publishedFile": "src/content/blog/published/cloud-migration/08-hologres-warehouse-migration.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/hologres-warehouse-migration",
+      "title": "异构数仓到 Hologres：先核对主键和类型，再批量导入"
+    },
+    {
+      "sourceFile": "09-SQL无序聚合排查.md",
+      "sourceSha256": "305f6a394afe2bdd91eec7ab971475e1daa56dea8285cf7e654571fbb36ef96b",
+      "publishedFile": "src/content/blog/published/cloud-migration/09-sql-unordered-aggregation.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/sql-unordered-aggregation",
+      "title": "SQL 行数相同但结果不同：无序集合聚合的排查过程"
+    },
+    {
+      "sourceFile": "10-监控日志与迁移验收.md",
+      "sourceSha256": "95068e473ad7cbbf9cdb64a38a355dbfd81c20a6287d077cb872aa21ef5044ab",
+      "publishedFile": "src/content/blog/published/cloud-migration/10-migration-monitoring-acceptance.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/migration-monitoring-acceptance",
+      "title": "迁移监控与验收：把运行日志变成可判断的证据"
+    },
+    {
+      "sourceFile": "11-多产品迁移的割接与问题闭环.md",
+      "sourceSha256": "c9eb3e875525c37886b5d905ae94c37b9fcebe7f08a5cf998cd5d7de0ee03162",
+      "publishedFile": "src/content/blog/published/cloud-migration/11-multi-product-migration-cutover.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/multi-product-migration-cutover",
+      "title": "多产品迁移的割接：按能力边界设计验证和问题闭环"
+    },
+    {
+      "sourceFile": "12-鉴权超时与网络路径排查.md",
+      "sourceSha256": "3fc0e69ece2400830cdd244a38808e07f43fba8efff63a5048f71ca22544a18a",
+      "publishedFile": "src/content/blog/published/cloud-migration/12-auth-timeout-network-debugging.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/auth-timeout-network-debugging",
+      "title": "鉴权超时的网络路径排查：用受控绕行验证瓶颈假设"
+    },
+    {
+      "sourceFile": "13-ADS分区导出到MaxCompute.md",
+      "sourceSha256": "03779fb9c343335541961acc05a74c3e0759b05a0b52535fc3c14ca263783a70",
+      "publishedFile": "src/content/blog/published/cloud-migration/13-ads-partition-export-maxcompute.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/ads-partition-export-maxcompute",
+      "title": "ADS 分区导出到 MaxCompute：字段与分区列要分别映射"
+    },
+    {
+      "sourceFile": "14-OTS与内部复制工具分析.md",
+      "sourceSha256": "f00c668b763ca2727437b8757307524572aa8a11dc61cf8926165a7dac96c146",
+      "publishedFile": "src/content/blog/published/cloud-migration/14-ots-internal-replication.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/ots-internal-replication",
+      "title": "OTS 与专有云内部复制工具：状态指标和切换操作的边界"
+    },
+    {
+      "sourceFile": "15-DataWorks任务导出与依赖核对.md",
+      "sourceSha256": "96447606197cda6b1eeeb08653486487ac9bc17d649cf3857615cbf305d4e1cb",
+      "publishedFile": "src/content/blog/published/cloud-migration/15-dataworks-task-dependency-review.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/dataworks-task-dependency-review",
+      "title": "DataWorks 任务导出资料的整理：业务 SQL 与调度配置要一起核对"
+    },
+    {
+      "sourceFile": "技术实践汇编.md",
+      "sourceSha256": "0edf3c7042d9aa58e778b0620e5e7f824fdb26af29e173d8ebd7cb6718681440",
+      "publishedFile": "src/content/blog/published/cloud-migration/16-cloud-migration-compendium.md",
+      "articleUrl": "https://blog.litianzeng.cn/article/cloud-migration-compendium",
+      "title": "云迁移技术实践汇编"
+    }
+  ]
+}
