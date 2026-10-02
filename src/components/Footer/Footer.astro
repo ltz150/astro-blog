@@ -45,8 +45,8 @@ const years = startYear === currentYear ? `${startYear}` : `${startYear}–${cur
         访问统计
       </a>}
     </p>
-    {ICPNumber && <p class="footer-links footer-registration">
-      <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-no-swup>
+    <p class="footer-links footer-registration">
+      {ICPNumber && <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" data-no-swup>
         <span class="footer-link-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" />
@@ -54,9 +54,9 @@ const years = startYear === currentYear ? `${startYear}` : `${startYear}–${cur
           </svg>
         </span>
         {ICPNumber}
-      </a>
-    </p>}
-    <p><span><cite>运行时间</cite><em class="web_time"></em></span></p>
+      </a>}
+      <span><cite>运行时间</cite><em class="web_time"></em></span>
+    </p>
   </main>
 </footer>
 {HanAnalytics.enable && <script is:inline defer src={`${HanAnalytics.url}/tracker.js`} data-website-id={HanAnalytics.websiteId} data-host={new URL(Site).hostname}></script>}

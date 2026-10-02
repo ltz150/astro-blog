@@ -6,6 +6,10 @@ import { toString } from 'mdast-util-to-string';
 // 处理标签
 const remarkNote = () => {
   return (tree: any, { data: astroData }: any) => {
+    // 对完整文章统计一次，普通 Markdown 也应生成阅读信息。
+    const readingTime = getReadingTime(toString(tree), { wordsPerMinute: 200 });
+    astroData.astro.frontmatter.reading_time = readingTime.minutes;
+    astroData.astro.frontmatter.article_word_count = readingTime.words;
     visit(tree, (node) => {
       const { type, name, attributes } = node;
       // 处理组件
@@ -27,11 +31,6 @@ const remarkNote = () => {
         }
         // 设置 class
         hProperties.class = `vh-node vh-${name}${attributes.type ? ` ${name}-${attributes.type}` : ''}`;
-        // 文章字数统计
-        const textOnPage = toString(tree);
-        const readingTime = getReadingTime(textOnPage);
-        astroData.astro.frontmatter.reading_time = readingTime.minutes
-        astroData.astro.frontmatter.article_word_count = readingTime.words
       }
     });
   };
@@ -68,4 +67,4 @@ const addClassNames = () => {
   };
 }
 
-export { remarkNote, addClassNames } 
+export { remarkNote, addClassNames }
