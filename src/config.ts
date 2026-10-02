@@ -8,6 +8,8 @@ export default {
   Title: 'LTZ博客',
   // 网站地址
   Site: 'https://blog.litianzeng.cn',
+  // 页脚备案号
+  ICPNumber: '豫ICP备2025141633号-1',
   // 网站副标题
   Subtitle: '记录生活与技术。',
   // 网站描述
