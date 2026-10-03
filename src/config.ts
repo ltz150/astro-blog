@@ -114,6 +114,20 @@ export default {
       serverURL: ''
     }
   },
+  // 固定商家 / 联盟广告：取得自己的专属推广链接后再开启。
+  // 配置说明见 docs/sidebar-sponsor-guide.md；不依赖 GoogleAds。
+  SidebarSponsor: {
+    enable: false,
+    brand: '',
+    title: '',
+    description: '',
+    href: '',
+    buttonText: '了解详情',
+    // 可选官方广告图，放在 public/assets/images/ads/，填写真实宽高。
+    image: '',
+    imageWidth: 300,
+    imageHeight: 600,
+  },
   // Google 广告
   GoogleAds: {
     ad_Client: '', //ca-pub-xxxxxx

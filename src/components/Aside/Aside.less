@@ -20,6 +20,17 @@ aside.vh-aside {
     width: 100%;
   }
 
+  // 商家广告正常滚动，目录单独吸顶，避免长广告挤占目录视口。
+  &>.sticky-aside:has(>.sidebar-sponsor) {
+    display: contents;
+    position: static;
+
+    &>.article-toc {
+      position: sticky;
+      top: calc(66px + 1rem);
+    }
+  }
+
   .vh-aside-item {
     position: relative;
     box-sizing: border-box;

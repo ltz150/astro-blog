@@ -1,0 +1,72 @@
+---
+import './SidebarSponsor.less';
+
+interface Campaign {
+  enable: boolean;
+  brand: string;
+  title: string;
+  description: string;
+  href: string;
+  buttonText: string;
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+interface Props {
+  campaign?: Partial<Campaign>;
+  preview?: boolean;
+}
+
+const { campaign = {}, preview = false } = Astro.props;
+const cleanText = (value: unknown) => typeof value === 'string' ? value.trim() : '';
+const brand = cleanText(campaign.brand);
+const title = cleanText(campaign.title);
+const href = cleanText(campaign.href);
+let validLink = false;
+let destination = '';
+try {
+  const url = new URL(href);
+  validLink = url.protocol === 'https:' || url.protocol === 'http:';
+  if (validLink) destination = url.href;
+} catch {
+  // Incomplete campaigns stay hidden until a valid destination is configured.
+}
+
+const visible = campaign.enable === true && Boolean(brand && title && validLink);
+const image = cleanText(campaign.image);
+const imageWidth = campaign.imageWidth;
+const imageHeight = campaign.imageHeight;
+const showImage = Boolean(image) && typeof imageWidth === 'number' && Number.isFinite(imageWidth) && imageWidth > 0
+  && typeof imageHeight === 'number' && Number.isFinite(imageHeight) && imageHeight > 0;
+---
+
+{visible && <section class="vh-aside-item sidebar-sponsor" aria-label={`${brand} 广告`}>
+  <div class="sponsor-heading">
+    <h2>{preview ? '广告位预览' : '广而告之'}</h2>
+    <span class="sponsor-disclosure">广告</span>
+  </div>
+  <a class:list={['sponsor-card', { 'has-image': showImage }]} href={destination} target="_blank" rel="sponsored noopener noreferrer" data-no-swup>
+    {showImage ? <img class="sponsor-image" src={image} width={imageWidth} height={imageHeight} loading="lazy" decoding="async" alt={`${brand}：${title}`} /> : <>
+      <svg class="sponsor-art" viewBox="0 0 160 190" fill="none" aria-hidden="true" focusable="false">
+        <path d="M43 64h76a19 19 0 0 0 1-38 28 28 0 0 0-53-4 21 21 0 0 0-24 42Z" />
+        <path d="M80 65v40m0 0H32v30m48-30h48v30m-48-30v53" />
+        <rect x="20" y="135" width="24" height="24" rx="6" />
+        <rect x="116" y="135" width="24" height="24" rx="6" />
+        <rect x="68" y="158" width="24" height="24" rx="6" />
+        <circle cx="80" cy="105" r="4" />
+      </svg>
+      <div class="sponsor-copy">
+        <span class="sponsor-category">AI / CLOUD</span>
+        <span class="sponsor-brand">{brand}</span>
+        <h3>{title}</h3>
+        {cleanText(campaign.description) && <p>{cleanText(campaign.description)}</p>}
+      </div>
+    </>}
+    <span class="sponsor-cta">
+      {cleanText(campaign.buttonText) || '了解详情'}
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M7 17 17 7M7 7h10v10" /></svg>
+    </span>
+  </a>
+  <p class="sponsor-note">{preview ? '尚未接入联盟，当前链接不产生佣金' : '推广链接可能产生佣金'}</p>
+</section>}

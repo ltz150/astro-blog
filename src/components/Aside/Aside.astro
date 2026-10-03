@@ -20,6 +20,7 @@ const CountInfo = getCountInfo();
 const recommendArticles = getRecommendArticles();
 // Google 广告组件
 import GoogleAd from "@/components/GoogleAd/GoogleAd.astro";
+import SidebarSponsor from "@/components/SidebarSponsor/SidebarSponsor.astro";
 // 侧边栏样式
 import "./Aside.less";
 import ArticleToc from '@/components/ArticleToc/ArticleToc.astro';
@@ -135,6 +136,7 @@ const { headings = [] } = Astro.props;
 			)
 		}
 
+		<SidebarSponsor campaign={SITE_CONFIG.SidebarSponsor} />
 		<ArticleToc headings={headings} />
 		<!-- 谷歌广告块 -->
 		{
