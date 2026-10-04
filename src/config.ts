@@ -15,7 +15,7 @@ export default {
   // 网站描述
   Description: '记录技术实践、学习笔记与日常。',
   // 网站作者
-  Author: 'ltz150',
+  Author: 'LTZ',
   // 作者头像
   Avatar: '/assets/images/ltz-avatar.svg',
   // 网站座右铭
@@ -69,6 +69,7 @@ export default {
   Navs: [
     // 仅支持 SVG 且 SVG 需放在 public/assets/images/svg/ 目录下，填入文件名即可 <不需要文件后缀名>（封装了 SVG 组件 为了极致压缩 SVG）
     // 建议使用 https://tabler.io/icons 直接下载 SVG
+    { text: '首页', link: '/', icon: 'Nav_home' },
     { text: '文章', link: '/archives', icon: 'Nav_archives' },
     { text: '动态', link: '/talking', icon: 'Nav_talking' },
     { text: '我的链接', link: '/links', icon: 'Nav_link' },
@@ -130,11 +131,12 @@ export default {
   },
   // Google 广告
   GoogleAds: {
-    ad_Client: '', //ca-pub-xxxxxx
+    // 网站所有权验证已配置；审核通过并填写广告单元后才加载广告脚本。
+    ad_Client: 'ca-pub-2366306817378349',
     // 侧边栏广告(不填不开启)
-    asideAD_Slot: `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxx" data-ad-slot="xxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>`,
+    asideAD_Slot: '',
     // 文章页广告(不填不开启)
-    articleAD_Slot: `<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-xxxxxx" data-ad-slot="xxxxxx" data-ad-format="auto" data-full-width-responsive="true"></ins>`
+    articleAD_Slot: ''
   },
   // 文章内赞赏码
   Reward: {

@@ -21,7 +21,7 @@ aside.vh-aside {
   }
 
   // 商家广告正常滚动，目录单独吸顶，避免长广告挤占目录视口。
-  &>.sticky-aside:has(>.sidebar-sponsor) {
+  &>.sticky-aside:has(>.sidebar-sponsor, >.ad) {
     display: contents;
     position: static;
 
@@ -62,6 +62,7 @@ aside.vh-aside {
         position: relative;
         width: 6.36rem;
         height: 6.36rem;
+        object-fit: contain;
         border-radius: 1rem;
         overflow: hidden;
       }

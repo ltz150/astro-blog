@@ -30,6 +30,7 @@ import "@/styles/Base.less";
 	<meta name="title" content={WebTitle} />
 	<meta name="site" content={Site} />
 	<meta name="author" content={Author} />
+	{SITE_CONFIG.GoogleAds.ad_Client && <meta name="google-adsense-account" content={SITE_CONFIG.GoogleAds.ad_Client} />}
 	<meta name="generator" content={Astro.generator} />
 	<meta name="robots" content="index, follow, max-image-preview:large" />
 	<meta itemprop="image" content={WebCover} />
